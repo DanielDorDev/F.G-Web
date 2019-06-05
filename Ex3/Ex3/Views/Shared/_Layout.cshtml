@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/MapStyle.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="~/Content/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <canvas id="myCanvas" class="bg-img"></canvas>
+    <canvas id="myCanvas2" class="layer2"></canvas>
+    @RenderBody()
+    <script src="~/Scripts/layout.js"></script>
+</body>
+</html>

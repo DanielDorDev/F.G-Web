@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Ex3.Models.FlightData>
+
+@{
+    ViewBag.Title = "display";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<img id="airplaneImage" class="airplane" src="~/Content/airbus.png"/>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/display.js"></script>
+
+<script>
+
+    // Track the id, create path in canvas,create current place track, set imageSize(in more complex options i could move those to CSS\element).
+    var idTrack = 0;
+    document.getElementById("myCanvas").getContext("2d").beginPath();
+    var imageSize = (this.window.innerWidth / 100) + 20;
+    var currentPlace = null;
+    
+    // Set refresh interval for user(Read event).
+    var refreshInterval = null;
+
+    if (@Session["time"] > 0) {
+        refreshInterval = setInterval(timerEvent, @Session["time"] * 1000);
+    }
+    timerEvent();
+</script>
+
