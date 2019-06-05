@@ -35,7 +35,7 @@ function convertXY(lon, lat) {
     return [x, y];
 }
 
-// Update map.
+// Update map, draw lines, clean if needed, draw airplane (in another canvas layer).
 function mapUpdate(id, data) {
 
     var ctx = document.getElementById("myCanvas").getContext("2d");
