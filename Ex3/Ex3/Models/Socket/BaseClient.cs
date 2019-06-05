@@ -5,6 +5,7 @@ using System.Web;
 
 namespace Ex3.Models.Socket
 {
+    // Connect to flightgear as client.
     public abstract class BaseClient : ITelnetClient
     {
         public abstract string Ip { get; }  // Return ip adress.

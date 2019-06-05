@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Ex3.Models.Socket
 {
+    // Connect to flightGear.
     public class ConnectToServer : BaseClient
     {
         IPEndPoint ep;
