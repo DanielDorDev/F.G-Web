@@ -27,7 +27,7 @@ namespace Ex3.Controllers
         // GET: api/FlightDatas?from=&to=
         public async Task<List<FlightData>> GetFlightDatas(int from, int to)
         {
-            // SQL server request for table, return list by order in range[from, to].
+            // SQL server request for table, return list by order in range[from => to].
             return await this.GetFlightDatas().Skip(from).Take(to - from).ToListAsync();
         }
 

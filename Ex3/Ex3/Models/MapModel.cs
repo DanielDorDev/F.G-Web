@@ -35,7 +35,7 @@ namespace Ex3.Models
             this.MapSource.PropertyChanged += MapSource_PropertyChanged;
             double rate = TimeSet > 0 ? (1000 / TimeSet) : 250;
 
-            // Init timer, add listener for event read(bind to server response.
+            // Init timer, add listener for event read(bind to server response).
             aTimer = new System.Timers.Timer
             {
                 Interval = rate

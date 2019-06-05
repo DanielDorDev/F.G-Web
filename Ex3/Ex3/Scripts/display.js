@@ -61,7 +61,7 @@ function mapUpdate(id, data) {
     this.idTrack = id; // Set new id.
 }
 
-// If scroll\size change occure.
+// If scroll \ size change occure.
 function atChange() {
     canvas1 = document.getElementById("myCanvas");
     canvas2 = document.getElementById("myCanvas2");
