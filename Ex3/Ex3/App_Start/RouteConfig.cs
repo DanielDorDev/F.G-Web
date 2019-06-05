@@ -6,7 +6,7 @@ namespace Ex3
 {
     public class RouteConfig
     {
-        // Route for base client request, use mvc api.
+        // Client to server side requests, handles as mvc route api 1.
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
