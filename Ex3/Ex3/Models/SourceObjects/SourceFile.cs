@@ -9,6 +9,7 @@ using System.Xml.Linq;
 
 namespace Ex3.Models.SourceObjects
 {
+    // Read xml from local disk file.
     public class SourceFile : ISource
     {
         private XmlReader reader = null;

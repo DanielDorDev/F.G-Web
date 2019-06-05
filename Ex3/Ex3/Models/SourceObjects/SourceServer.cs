@@ -8,6 +8,7 @@ using System.Web;
 
 namespace Ex3.Models.SourceObjects
 {
+    // Read directly from flightgear.
     public class SourceServer : ISource
     {
         readonly BaseClient serverConnection;
