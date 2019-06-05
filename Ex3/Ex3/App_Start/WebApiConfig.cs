@@ -4,6 +4,7 @@ namespace Ex3
 {
     public static class WebApiConfig
     {
+        // Use web api 2, to route client side request for sql server info.
         public static void Register(HttpConfiguration config)
         {
             // Sql server requests route, use web api.
