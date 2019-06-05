@@ -10,6 +10,7 @@ using System.Web;
 
 namespace Ex3.Models
 {
+    // Main class for model, used as gate between data reading from sources, and requests from controller.
     public class MapModel : BaseNotify
     {
 
