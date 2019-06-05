@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Ex3.Models
 {
-    // Data type for the sql schema.
+    // Data type for the sql schema, main data used by the project.
     public class FlightData
     {
         // Key value for route order.

@@ -9,7 +9,7 @@ namespace Ex3.Models
     public class Ex3Context : DbContext
     {
     
-        // DBcontext for sql server, define the connection.
+        // DBcontext for sql server, define the connection to the server.
         public Ex3Context() : base("name=Ex3Context")
         {
         }
