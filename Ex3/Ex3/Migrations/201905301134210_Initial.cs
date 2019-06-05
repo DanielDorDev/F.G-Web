@@ -3,6 +3,7 @@ namespace Ex3.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
+    // Init the database.
     public partial class Initial : DbMigration
     {
         public override void Up()
