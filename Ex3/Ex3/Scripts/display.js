@@ -12,11 +12,10 @@ function timerEvent() {
         success: function (data) {
 
             // Check if alert needed for empty respond.
-            if (jQuery.isEmptyObject(data) && '@(ViewBag.AlertFinishedReading)' ) {
+            if (jQuery.isEmptyObject(data) && alertFinishedReading == "True") {
                 clearInterval(refreshInterval);
                 alert("Finished");
             }
-
             $.each(data, function (i, value) {
                 mapUpdate(value.Id, convertXY(value.Lon, value.Lat));
             });
@@ -35,7 +34,7 @@ function convertXY(lon, lat) {
     return [x, y];
 }
 
-// Update map, draw lines, clean if needed, draw airplane (in another canvas layer).
+// Update map.
 function mapUpdate(id, data) {
 
     var ctx = document.getElementById("myCanvas").getContext("2d");
@@ -61,7 +60,7 @@ function mapUpdate(id, data) {
     this.idTrack = id; // Set new id.
 }
 
-// If scroll \ size change occure.
+// If scroll\size change occure.
 function atChange() {
     canvas1 = document.getElementById("myCanvas");
     canvas2 = document.getElementById("myCanvas2");

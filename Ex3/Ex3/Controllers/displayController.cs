@@ -29,7 +29,7 @@ namespace Ex3.Controllers
         {
             // Create map model and inject source server(source interface).
             MapModel mapModel = new MapModel(new SourceServer(ip, port), time);
-            ViewBag.AlertFinishedReading = false;
+            ViewBag.AlertFinishedReading = "False";
             // Register listener of event timeout(for map model use).
             mapModel.PropertyChanged += (object sender, PropertyChangedEventArgs e) =>
             {
@@ -65,7 +65,7 @@ namespace Ex3.Controllers
                 // Create source file(interface) from type source file.
                 MapModel mapModel = new MapModel(new SourceFile(Server.MapPath(@"\" + name + ".xml")), time);
                 // Configure client side refresh rate(in seconds), start model and return display.
-                ViewBag.AlertFinishedReading = true;
+                ViewBag.AlertFinishedReading = "True";
 
 
                 return StartDisplay(mapModel);
@@ -87,7 +87,7 @@ namespace Ex3.Controllers
             }
             // Create model, for data reading.
             MapModel mapModel = new MapModel(new SourceServer(ip, port), rate);
-            ViewBag.AlertFinishedReading = false;
+            ViewBag.AlertFinishedReading = "False";
 
             // Add at timeout event, export dbo.flightdatas to xml file.
             mapModel.PropertyChanged += (object sender, PropertyChangedEventArgs e) =>
