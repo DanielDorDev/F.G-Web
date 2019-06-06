@@ -27,38 +27,51 @@ namespace Ex3.Models
             using (var db = new Ex3Context())
             {
                 db.Database.Delete();
-           //     db.Database.ExecuteSqlCommand("TRUNCATE TABLE [FlightDatas]");
+                //     db.Database.ExecuteSqlCommand("TRUNCATE TABLE [FlightDatas]");
                 db.SaveChanges();
             }
 
             // Set the map source, add listener, define timer(with default 4 times second reading rate).
             this.MapSource = MapSourceSet;
             this.MapSource.PropertyChanged += MapSource_PropertyChanged;
-            double rate = TimeSet > 0 ? (1000 / TimeSet) : 1000;
 
             // Init timer, add listener for event read(bind to server response).
             aTimer = new System.Timers.Timer
             {
-                Interval = rate
+                Enabled = true,
             };
 
+            if (TimeSet <= 0)
+            {
+                aTimer.AutoReset = false; // Default interval is 100ms.
+            }
+            else
+            {
+                aTimer.AutoReset = true;
+                aTimer.Interval = 1000 / TimeSet;
+            }
             this.aTimer.Elapsed += (sender, e) => EventRead(this, null, MapSource);
         }
+
+
 
         // Stop request from server(give the option for later reconnection).
         public void Stop()
         {
             if (aTimer != null)
             {
-                aTimer.Close();
+                aTimer.Stop();
             }
         }
+
         // Start reading from server, open connection and start reading.
         public void Start()
         {
             MapSource.Open();
             this.aTimer.Start();
+            EventRead(this, null, MapSource);
         }
+
 
         // Event read, create request to flightgear, get responce, and update sql.
         public void EventRead(object source, ElapsedEventArgs e, ISource sourceRead)
@@ -79,8 +92,6 @@ namespace Ex3.Models
                     });
                     db.SaveChanges();
                 }
-                // Notify event happened.
-                this.NotifyPropertyChanged("EventRead");
             }
             catch (Exception) { };
         }

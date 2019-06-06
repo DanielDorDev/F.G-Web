@@ -5,6 +5,7 @@
 
 // Reading event, Get new data.
 function timerEvent() {
+
     $.ajax({
         url: '/api/FlightDatas?from=' + this.idTrack + '&to=1000',
         type: "GET",

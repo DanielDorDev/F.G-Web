@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <Id>1</Id>
+    <Lon>56</Lon>
+    <Lat>4.0000000000000009</Lat>
+    <Rudder>11</Rudder>
+    <Throttle>3</Throttle>
+  </Table>
+  <Table>
+    <Id>2</Id>
+    <Lon>57</Lon>
+    <Lat>4.6000000000000005</Lat>
+    <Rudder>11</Rudder>
+    <Throttle>3</Throttle>
+  </Table>
+  <Table>
+    <Id>3</Id>
+    <Lon>58</Lon>
+    <Lat>4.1000000000000005</Lat>
+    <Rudder>11</Rudder>
+    <Throttle>3</Throttle>
+  </Table>
+  <Table>
+    <Id>4</Id>
+    <Lon>59</Lon>
+    <Lat>3.2000000000000006</Lat>
+    <Rudder>11</Rudder>
+    <Throttle>3</Throttle>
+  </Table>
+  <Table>
+    <Id>5</Id>
+    <Lon>60</Lon>
+    <Lat>4.1000000000000005</Lat>
+    <Rudder>11</Rudder>
+    <Throttle>3</Throttle>
+  </Table>
+  <Table>
+    <Id>6</Id>
+    <Lon>61</Lon>
+    <Lat>5.0000000000000009</Lat>
+    <Rudder>11</Rudder>
+    <Throttle>3</Throttle>
+  </Table>
+</NewDataSet>

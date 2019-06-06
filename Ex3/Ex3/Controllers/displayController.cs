@@ -31,18 +31,6 @@ namespace Ex3.Controllers
             MapModel mapModel = new MapModel(new SourceServer(ip, port), time);
             ViewBag.AlertFinishedReading = "False";
 
-            // If time = 0 , default request created (update once), register event for first read.
-            if (time == 0)
-            {
-                mapModel.PropertyChanged += (object sender, PropertyChangedEventArgs e) =>
-                {
-                    if
-                      (e.PropertyName == "EventRead")
-                    {
-                        mapModel.Stop();
-                    }
-                };
-            }
             // Configure client side refresh rate(in seconds), start model and return display.
             return StartDisplay(mapModel);
         }
@@ -128,8 +116,8 @@ namespace Ex3.Controllers
         // Common action of model start, time refresh init and view return.
         public ActionResult StartDisplay(MapModel mapModel)
         {
-            Session["time"] = 4;
             mapModel.Start();
+            Session["time"] = 4;
             return View("display");
         }
     }
