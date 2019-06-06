@@ -26,14 +26,15 @@ namespace Ex3.Models
             // Delete table if exist.
             using (var db = new Ex3Context())
             {
-                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [FlightDatas]");
+                db.Database.Delete();
+           //     db.Database.ExecuteSqlCommand("TRUNCATE TABLE [FlightDatas]");
                 db.SaveChanges();
             }
 
             // Set the map source, add listener, define timer(with default 4 times second reading rate).
             this.MapSource = MapSourceSet;
             this.MapSource.PropertyChanged += MapSource_PropertyChanged;
-            double rate = TimeSet > 0 ? (1000 / TimeSet) : 250;
+            double rate = TimeSet > 0 ? (1000 / TimeSet) : 1000;
 
             // Init timer, add listener for event read(bind to server response).
             aTimer = new System.Timers.Timer
@@ -62,11 +63,6 @@ namespace Ex3.Models
         // Event read, create request to flightgear, get responce, and update sql.
         public void EventRead(object source, ElapsedEventArgs e, ISource sourceRead)
         {
-
-            if (sourceRead == null)
-            {
-                return;
-            }
             try
             {
                 // Convert the data returned, use ex3context connection, init dbset and insert, save changed.
@@ -99,7 +95,6 @@ namespace Ex3.Models
                 {
                     this.Stop();
                 }
-                this.NotifyPropertyChanged("EventTimeout");
             }
         }
     }

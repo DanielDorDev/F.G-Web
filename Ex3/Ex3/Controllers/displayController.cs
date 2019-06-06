@@ -30,14 +30,6 @@ namespace Ex3.Controllers
             // Create map model and inject source server(source interface).
             MapModel mapModel = new MapModel(new SourceServer(ip, port), time);
             ViewBag.AlertFinishedReading = "False";
-            // Register listener of event timeout(for map model use).
-            mapModel.PropertyChanged += (object sender, PropertyChangedEventArgs e) =>
-            {
-                if (e.PropertyName == "EventTimeout")
-                {
-                    mapModel.Stop();
-                }
-            };
 
             // If time = 0 , default request created (update once), register event for first read.
             if (time == 0)
