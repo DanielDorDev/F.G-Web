@@ -2,4 +2,3 @@
 
 
 
-![](flight.gif)
