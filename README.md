@@ -1,9 +1,8 @@
 # F.G-Web
 
-<p> C# ASP .NET MVC server, REST architectural, exhibiting Real-Time route from Flight-Gear </p>
-<p> Server-side - flight data stored in Entity Framework Code-First.</p>
-<p> Entity model created with Code-First approach.</p>
-<p> Client-side - communicate with server, create ajax requests and display route. </p>
+<p> C# ASP .NET MVC server, REST architectural, exhibiting Real-Time route from Flight-Gear. </p>
+<p> Server-side - flight data stored in DB, entity model created with Code-First, work with Entity Framework .</p>
+<p> Client-side - establish connection with server, create ajax requests and display flight route. </p>
   
   
   
